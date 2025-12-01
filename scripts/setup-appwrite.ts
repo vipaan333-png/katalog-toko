@@ -1,10 +1,12 @@
 /**
  * Script untuk setup Appwrite Database
  * Membuat database, collections, attributes, indexes, dan sample data
- * 
+ *
  * Cara menjalankan:
  * npx ts-node scripts/setup-appwrite.ts
  */
+
+/// <reference types="node" />
 
 import { Client, Databases, Storage, ID, Permission, Role } from 'node-appwrite';
 
