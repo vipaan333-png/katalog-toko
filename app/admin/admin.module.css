@@ -1,0 +1,308 @@
+/* Admin Page Container */
+.page {
+    min-height: 100vh;
+    padding-bottom: var(--spacing-xl);
+}
+
+/* Header */
+.header {
+    background: rgba(44, 24, 16, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: var(--spacing-md) 0;
+    margin-bottom: var(--spacing-lg);
+}
+
+.headerContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Alert Messages */
+.alert {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 500;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alertSuccess {
+    background: rgba(16, 185, 129, 0.2);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #10b981;
+}
+
+.alertError {
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+}
+
+/* Admin Content Layout */
+.adminContent {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: var(--spacing-lg);
+}
+
+/* Form Section */
+.formSection {
+    position: sticky;
+    top: var(--spacing-lg);
+    height: fit-content;
+}
+
+.formCard {
+    padding: var(--spacing-lg);
+}
+
+.formTitle {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-primary);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.formGroup label {
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.imagePreview {
+    margin-top: var(--spacing-sm);
+    width: 100%;
+    height: 200px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: rgba(30, 41, 59, 0.5);
+}
+
+.imagePreview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.formActions {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.formActions button {
+    flex: 1;
+}
+
+/* Products Section */
+.productsSection {}
+
+.productsCard {
+    padding: var(--spacing-lg);
+    min-height: 400px;
+}
+
+.productsTitle {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-primary);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border);
+}
+
+.loadingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+    gap: var(--spacing-md);
+    color: var(--text-secondary);
+}
+
+.emptyState {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--text-muted);
+    font-size: var(--font-size-lg);
+}
+
+/* Products List */
+.productsList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.productItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.productItem:hover {
+    background: rgba(60, 40, 30, 0.5);
+    border-color: rgba(139, 69, 19, 0.3);
+    transform: translateX(4px);
+}
+
+.productItemImage {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: rgba(15, 23, 42, 0.5);
+    flex-shrink: 0;
+}
+
+.productItemImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.productItemInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.productItemInfo h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.productItemMeta {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+.categoryBadge {
+    padding: 0.25rem 0.75rem;
+    background: rgba(160, 82, 45, 0.2);
+    color: var(--secondary);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+.priceBadge {
+    padding: 0.25rem 0.75rem;
+    background: rgba(139, 69, 19, 0.2);
+    color: var(--primary);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+}
+
+.discountBadge {
+    padding: 0.25rem 0.75rem;
+    background: rgba(220, 38, 38, 0.2);
+    color: #dc2626;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+}
+
+.productItemActions {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-shrink: 0;
+}
+
+.productItemActions button {
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .adminContent {
+        grid-template-columns: 1fr;
+    }
+
+    .formSection {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .headerContent {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        align-items: flex-start;
+    }
+
+    .productItem {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .productItemImage {
+        width: 100%;
+        height: 200px;
+    }
+
+    .productItemActions {
+        width: 100%;
+    }
+
+    .productItemActions button {
+        flex: 1;
+    }
+
+    .formActions {
+        flex-direction: column;
+    }
+
+    .formActions button {
+        width: 100%;
+    }
+}
