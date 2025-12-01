@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "migrate": "ts-node scripts/migrate-data.ts"
+    "migrate": "ts-node scripts/migrate-data.ts",
+    "setup": "ts-node scripts/setup-appwrite.ts"
   },
   "dependencies": {
     "appwrite": "^21.4.0",
