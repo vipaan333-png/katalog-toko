@@ -9,7 +9,6 @@ export async function GET(
     const product = await getProductById(params.id);
     return NextResponse.json(product);
   } catch (error) {
-    console.error('Error fetching product:', error);
     return NextResponse.json(
       { error: 'Product not found' },
       { status: 404 }
@@ -42,7 +41,6 @@ export async function DELETE(
     await deleteProduct(params.id);
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Error deleting product:', error);
     return NextResponse.json(
       { error: 'Failed to delete product' },
       { status: 500 }

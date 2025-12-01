@@ -4,8 +4,8 @@ import { Query, ID } from 'node-appwrite';
 import { Product } from '@/types';
 
 const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID!;
-const COLLECTION_PRODUCTS = process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_PRODUCTS!;
-const COLLECTION_CATEGORIES = process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_CATEGORIES!;
+const COLLECTION_PRODUCTS = process.env.NEXT_PUBLIC_APPWRITE_PRODUCTS_COLLECTION_ID!;
+const COLLECTION_CATEGORIES = process.env.NEXT_PUBLIC_APPWRITE_CATEGORIES_COLLECTION_ID!;
 const BUCKET_ID = process.env.NEXT_PUBLIC_APPWRITE_BUCKET_ID!;
 
 /**
@@ -120,7 +120,7 @@ export async function deleteProduct(productId: string) {
         try {
             await storage.deleteFile(BUCKET_ID, product.imageId);
         } catch (error) {
-            console.error('Error deleting image:', error);
+            // Error deleting image
         }
     }
 
